@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="sling:File"
+    sling:resourceType="sling:File">
+    <jcr:content
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="sling:FileContent"
+        sling:lastPublication="{Date}2023-10-11T13:33:55.907Z"
+        sling:lastPublicationType="ADD"
+        sling:published="{Boolean}true"/>
+</jcr:root>

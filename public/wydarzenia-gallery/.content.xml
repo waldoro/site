@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="sling:OrderedFolder">
+    <jcr:content
+        jcr:lastModified="{Date}2023-01-26T11:44:47.430+01:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Galeria wydarzenia"/>
+    <czerwony.png/>
+    <hrabinapaczek.png/>
+    <dyniaparty.png/>
+    <koncertjesienny.png/>
+    <szkolaniedostateczna.png/>
+    <zmijewski.jpg/>
+</jcr:root>
