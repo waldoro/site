@@ -131,13 +131,46 @@ $(document).ready(function () {
 });
 
 // Kontakt form
-
+const form = document.getElementById("form");
 
 $(document).ready(function () {
     $('#contactForm input,textarea').on('input', () => {
-        onFormFieldsChange();
+        //onFormFieldsChange();
+    });
+    form.addEventListener("submit", function (e) {
+        const formData = new FormData(form);
+        e.preventDefault();
+        var object = {};
+        formData.forEach((value, key) => {
+            object[key] = value;
+        });
+        const json = JSON.stringify(object);
 
-    })
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: json
+        })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    success()
+                } else {
+                    console.log(response);
+                    error();
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+                error();
+            })
+            .then(function () {
+                form.reset();
+            });
+    });
 });
 
 function onFormFieldsChange() {
@@ -151,31 +184,6 @@ function onFormFieldsChange() {
         $('#submitButton').addClass('disabled');
         $('#submitButton').off();
     }
-}
-
-function onSubmitClick() {
-    const name = $('#name').val();
-    const email = $('#email').val();
-    const message = $('#message').val();
-    const phone = $('#phone').val();
-    let data = {
-        'name': encodeURIComponent(name),
-        'email': email,
-        'message': encodeURIComponent(message),
-        'phone': phone,
-    };
-    let request = $.ajax({
-        type: "POST",
-        url: "/ks/contact/form",
-        data: data
-    });
-    request.done(function (msg) {
-        success();
-    });
-
-    request.fail(function (jqXHR, textStatus) {
-        error();
-    });
 }
 
 function success() {
