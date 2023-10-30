@@ -131,7 +131,7 @@ $(document).ready(function () {
 });
 
 // Kontakt form
-const form = document.getElementById("form");
+const form = document.getElementById("contactForm");
 
 $(document).ready(function () {
     $('#contactForm input,textarea').on('input', () => {
